@@ -1,0 +1,101 @@
+<Button>:
+    background_color: 1, 1, 1, .5
+    font_size: '20sp'
+
+<Main>:
+    rez: rez
+    d0: d0
+    d1: d1
+    d2: d2
+    d3: d3
+    d4: d4
+    d5: d5
+    d6: d6
+    d7: d7
+    d8: d8
+    d9: d9
+    plus: plus
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id: rez
+            text: "0.0"
+            text_size: self.size
+            font_size: '45sp'
+            halign: 'right'
+            valign: 'middle'
+        GridLayout:
+            cols: 2
+            Button:
+                text: "<-"
+                on_release: root.back()
+            Button:
+                text: "Clear"
+                on_release: root.clear()
+        GridLayout:
+            cols: 4
+            Button:
+                text: "7"
+                id: d7
+                on_release: app.root.digit_button_7()
+            Button:
+                text: "8"
+                id: d8
+                on_release: app.root.digit_button_8()
+            Button:
+                text: "9"
+                id: d9
+                on_release: app.root.digit_button_9()
+            Button:
+                text: "/"
+                on_release: root.division()
+        GridLayout:
+            cols: 4
+            Button:
+                text: "4"
+                id: d4
+                on_release: app.root.digit_button_4()
+            Button:
+                text: "5"
+                id: d5
+                on_release: app.root.digit_button_5()
+            Button:
+                text: "6"
+                id: d6
+                on_release: app.root.digit_button_6()
+            Button:
+                text: "x"
+                on_release: root.multiply()
+        GridLayout:
+            cols: 4
+            Button:
+                text: "1"
+                id: d1
+                on_release: app.root.digit_button_1()
+            Button:
+                text: "2"
+                id: d2
+                on_release: app.root.digit_button_2()
+            Button:
+                text: "3"
+                id: d3
+                on_release: app.root.digit_button_3()
+            Button:
+                text: "-"
+                on_release: root.minus()
+        GridLayout:
+            cols: 4
+            Button:
+                text: "0"
+                id: d0
+                on_release: root.digit_button_0()
+            Button:
+                text: "."
+                on_release: root.period()
+            Button:
+                text: "="
+                on_release: root.equal()
+            Button:
+                text: "+"
+                id: plus
+                on_release: root.add()
